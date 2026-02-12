@@ -8,12 +8,6 @@ tags:
 
 Disclaimer: **NO** generative ai was used in writing or editing in this post and later posts unless pointed out explicitly. This series are my notes during my study of how to use Isaac Sim. So it hopefully can help those audience also new to this software. My environment is Ubuntu 22.04. Please feel free to contact me for any quesitons during reading.
 
-outline
- - how does isaac sim work: the architecture
- - first step, install isaac sim
- - chose where to do your development in the architecture
- - fast change history of api
-
 ## Introductoin
 
 Isaac Sim is included in my project for simulation validation before turning my ideas into real robots.
