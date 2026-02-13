@@ -182,6 +182,14 @@ $~/isaacsim/_build/linux-x86_64/release/python.sh ~/isaacsim_scripts/stereo_reco
 
 TBD
 
+## Soft body dynamics: how did they do FEM from the mesh
+
+TBD
+
+## Robotic surgery simulation
+
+[NVIDIA Isaac for Healthcare](https://isaac-for-healthcare.github.io/i4h-docs/models/#what-are-models-policies)
+
 
 ## References
 
