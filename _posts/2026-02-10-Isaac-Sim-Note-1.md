@@ -28,6 +28,84 @@ So, in my environment, the built isaac sim software is at the folder `$~/isaacsi
 
 Also you can run standalone python scripts by `~$/isaacsim/_build/linux-x86_64/release/python.sh <python standalone script>`. There is the second way to execute pyhton script: `windwos>script editer`. I will talk about the difference later. And the third way is to use ROS bridge. But I havent tried it for now.
 
+### Hello world
+
+```python
+from isaacsim import SimulationApp
+simulation_app = SimulationApp({"headless": False})
+# just make sure these two lines are at the start
+
+import isaacsim.core.utils.prims as prim_utils
+from isaacsim.core.api import World
+from pxr import Gf, UsdLux
+
+my_world = World(stage_units_in_meters=1.0)
+my_world.scene.add_default_ground_plane()
+
+stage = prim_utils.get_current_stage()
+UsdLux.DomeLight.Define(stage, "/World/DomeLight").CreateIntensityAttr(1200.0)
+UsdLux.DistantLight.Define(stage, "/World/DistantLight").CreateIntensityAttr(2000.0)
+
+my_world.reset()
+
+while(True):
+    my_world.step(render=True)
+    simulation_app.update()
+```
+
+make sure you execute this two lines before importing anything related to Omniver Kit. Not sure about the official name of this process(TODO). It will have you the access to those packages, inlcuding `isaacsim.core.utils.prims.prim_utils`, `isaacsim.core.api.World` and so on.
+
+As usual, use your `python.sh` to execute this "standalone python script".
+
+![](/images/img_2026-02-16-16-50-37.png)
+
+Congrats! You have created an virtual world and a luminous ground. You are able to rotate with you mouse. The left main window with the world inside is called "viewport". At right side, under the tab "Stage", a primitive tree is used to manage primitives of the world. Enter `ctrl`+`c` inside the terminal that runs the program to end the simulation.
+
+Next Step, let's create some objects.
+
+```python
+from isaacsim import SimulationApp
+simulation_app = SimulationApp({"headless": False})
+# just make sure these two lines are at the start
+
+import isaacsim.core.utils.prims as prim_utils
+from isaacsim.core.api import World
+from pxr import Gf, UsdLux
+
+# create the world, ground plane, and light source
+my_world = World(stage_units_in_meters=1.0)
+my_world.scene.add_default_ground_plane()
+
+stage = prim_utils.get_current_stage()
+UsdLux.DomeLight.Define(stage, "/World/DomeLight").CreateIntensityAttr(1200.0)
+UsdLux.DistantLight.Define(stage, "/World/DistantLight").CreateIntensityAttr(2000.0)
+
+# place objects
+# Sphere. translation means the center's coordinate is (0, 0, 0.4) wrt. the world frame. And the scale is cofigued that the radius equals 0.3
+prim_utils.create_prim("/World/obj_sphere", "Sphere", translation=(0.0, 0.0, 0.4), attributes={"radius": 0.3})
+
+# Cube. attributes is as listed in parameters. Scale has 3 members, describing the scaling in 3 axis.
+prim_utils.create_prim("/World/obj_cube", "Cube", translation=(2, 0, 0.4), scale=(0.2, 0.2, 0.2))
+
+# Capsule 
+prim_utils.create_prim("/World/obj_capsule", "Capsule", translation=(4, 0, 0.5), attributes={"radius": 0.2, "height": 0.6})
+
+# Cone 
+prim_utils.create_prim("/World/obj_cone", "Cone", translation=(6, 0, 0.5), attributes={"radius": 0.3, "height": 0.8})
+
+# Cylinder 
+prim_utils.create_prim("/World/obj_cylinder", "Cylinder", translation=(8, 0, 0.5), attributes={"radius": 0.3, "height": 0.6})
+
+my_world.reset()
+
+while(True):
+    my_world.step(render=True)
+    simulation_app.update()
+```
+
+![](/images/img_2026-02-16-17-34-06.png)
+
+
 ## Mismatching in old version's tutorials
 
 Isaac Sim is iterating so fast that version `5.1.0` has rendered many old tutorials' APIs broken. And unfortunately generative ai tools can't give effective solutions because their data is outdated for this version. For example, Google Gemini's latest training data is up to Jan 2025[[1]](#ref1). But there is a huge change in their `5.0.0`'s [Release Note](https://docs.isaacsim.omniverse.nvidia.com/5.0.0/overview/release_notes.html#removed) in [Aug 2025](https://developer.nvidia.com/blog/isaac-sim-and-isaac-lab-are-now-available-for-early-developer-preview/). On top of the official documentaion and some long Youtube videos, there are another person doing the same thing, like writing [tutorial](https://github.com/cold-young/Isaacsim_tutorial/tree/sim-5.1.0) for Isaac Sim `5.1.0`. But She hasn't updated it since last month.
@@ -56,6 +134,8 @@ Furthermore, Isaac Lab, ROS and other App view isaac sim as a platform. NVIDIA I
 ## A simple stereo camera demo
 
 (To explain this later ...)
+
+(fix view rotation and give intrinsic matrix, camera pose)
 
 ```python
 from isaacsim import SimulationApp
@@ -185,6 +265,12 @@ TBD
 ## Soft body dynamics: how did they do FEM from the mesh
 
 TBD
+
+## equivalent force sensor
+
+calculate from displacement
+
+read join drive
 
 ## Robotic surgery simulation
 
