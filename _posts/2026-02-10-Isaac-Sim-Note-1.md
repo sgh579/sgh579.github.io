@@ -137,19 +137,11 @@ The biggest trouble is the mismatching of api when you are following some tutori
 
 
 
-## A simple deformable behavior verification
 
-TBD
 
-## Soft body dynamics: how did they do FEM from the mesh
 
-TBD
 
-## equivalent force sensor
 
-calculate from displacement
-
-read join drive
 
 ## Robotic surgery simulation
 
