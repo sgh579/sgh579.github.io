@@ -8,3 +8,17 @@ tags:
 ---
 
 # Editing Deformable bodies in Isaac Sim
+
+## A simple deformable behavior verification
+
+TBD
+
+## Soft body dynamics: how did they do FEM from the mesh
+
+TBD
+
+## equivalent force sensor
+
+### calculate from displacement
+
+### read join drive

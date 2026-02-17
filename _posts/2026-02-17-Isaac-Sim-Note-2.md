@@ -4,6 +4,7 @@ date: 2026-02-17
 permalink: /posts/2026/02/isaac-sim-note-2/
 tags:
   - Isaac Sim
+  - Draft
 ---
 
 # stereo camera simulation
