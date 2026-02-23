@@ -9,6 +9,8 @@ tags:
 
 # stereo camera simulation
 
+Comment after posting: I found a example `~/isaacsim/source/standalone_examples/api/isaacsim.sensors.camera/camera_stereoscopic_depth.py`. Ok, I was reinventing the wheel.
+
 This is a stereo camera simulation in Isaac Sim. The biggest trouble is that different coordinate conventions conflict: while the standard USD LookAt logic targets the $-Z$ axis, the Isaac Sim Camera sensor follows the robotics convention where $+X$ is the forward optical axis and $+Z$ is up. This necessitates a 90-degree pitch to align the view and an additional -90-degree roll to ensure the sensor output is upright.
 
 

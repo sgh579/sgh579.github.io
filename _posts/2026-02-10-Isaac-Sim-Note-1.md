@@ -123,7 +123,7 @@ while(True):
 
 ![](/images/img_2026-02-16-17-34-06.png)
 
-You can also add gravity and collision box if you want. More related example of Isaac Sim apis can be found at standalone python scripts provided by Isaac Sim itself. If you want to implement somthing that you think Isaac Sim could be able to do, check their Physical/Robotic Example first. Read examples' source code to understand how those methods work. Go check them and it's better to do this before reading Documantion and google your questions.
+You can also add gravity and collision box if you want. More related example of Isaac Sim apis can be found at standalone python scripts provided by Isaac Sim itself. If you want to implement somthing that you think Isaac Sim could be able to do, check their Physical/Robotic Example first(somewhere like `~/home/goodmansun~/isaacsim/source/standalone_examples`). Read examples' source code to understand how those methods work. Go check them and it's better to do this before reading Documantion and google your questions.
 
 
 
