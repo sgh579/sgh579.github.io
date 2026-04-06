@@ -1,5 +1,5 @@
 ---
-title: 'Isaac Sim note 1'
+title: 'Isaac Sim note 1 (Refactoring soon)'
 date: 2026-02-10
 permalink: /posts/2026/02/isaac-sim-note-1/
 tags:
