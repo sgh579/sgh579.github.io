@@ -7,4 +7,14 @@ redirect_from:
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. 
+<div class="home-intro">
+  <p class="home-intro__eyebrow">Personal homepage</p>
+  <h1>Guoheng Sun</h1>
+  <p>I use this space to collect research notes, technical write-ups, and working records around robotics, simulation, and the tools I am learning along the way.</p>
+</div>
+
+## Recent Focus
+
+- Robotics simulation and validation workflows
+- Isaac Sim, ROS, and related tooling
+- Notes that turn scattered experiments into reusable references

@@ -4,6 +4,17 @@ layout: default
 
 {% include base_path %}
 
+{% assign show_author_profile = false %}
+{% if page.url == "/" or page.url == "/index.html" %}
+  {% if page.author_profile or layout.author_profile %}
+    {% assign show_author_profile = true %}
+  {% endif %}
+{% endif %}
+{% assign show_sidebar = show_author_profile %}
+{% if page.sidebar %}
+  {% assign show_sidebar = true %}
+{% endif %}
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% endif %}
@@ -14,7 +25,7 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main">
+<div id="main" class="{% unless show_sidebar %}no-sidebar{% endunless %}" role="main">
   {% include sidebar.html %}
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
@@ -43,6 +54,16 @@ layout: default
         {% endif %}    
         </header>
       {% endunless %}
+
+      {% if page.collection == 'posts' and page.ai_statement != false %}
+        <details class="post-info-bar">
+          <summary>
+            <span class="post-info-bar__icon" aria-hidden="true"><i class="fa fa-info-circle"></i></span>
+            <span class="post-info-bar__title">AI statement</span>
+          </summary>
+          <p>This post does not contain AI-generated sentences.</p>
+        </details>
+      {% endif %}
 
       <section class="page__content" itemprop="text">
         {{ content }}
