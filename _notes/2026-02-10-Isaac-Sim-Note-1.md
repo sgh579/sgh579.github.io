@@ -1,12 +1,10 @@
 ---
 title: 'Isaac Sim note 1 (Refactoring soon)'
 date: 2026-02-10
-permalink: /posts/2026/02/isaac-sim-note-1/
+permalink: /notes/isaac-sim-note-1/
 tags:
   - Isaac Sim
 ---
-
-Disclaimer: **NO** generative ai was used in writing or editing in this post and later posts unless pointed out explicitly. This series are my notes during my study of how to use Isaac Sim. So it hopefully can help those audience also new to this software. My environment is Ubuntu 22.04. Please feel free to contact me for any quesitons during reading.
 
 ## Introductoin
 

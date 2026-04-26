@@ -25,6 +25,9 @@ main:
 
   - title: "Notes"
     url: /notes/
+
+  - title: "Album"
+    url: /album/
     
   # - title: "CV"
   #   url: /cv/
@@ -32,5 +35,5 @@ main:
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "Guide"
-    url: /markdown/
+  # - title: "Guide"
+  #   url: /markdown/
