@@ -2,6 +2,7 @@
 title: 'Isaac Sim note 2'
 date: 2026-02-17
 permalink: /posts/2026/02/isaac-sim-note-2/
+lang: en
 tags:
   - Isaac Sim
   - Draft

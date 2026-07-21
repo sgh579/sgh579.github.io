@@ -2,6 +2,7 @@
 title: 'Isaac Sim note 1 (Refactoring soon)'
 date: 2026-02-10
 permalink: /notes/isaac-sim-note-1/
+lang: en
 tags:
   - Isaac Sim
 ---

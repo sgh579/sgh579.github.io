@@ -2,6 +2,7 @@
 title: 'Git Naming Conventions'
 date: 2026-02-23
 permalink: /posts/2026/02/Git-Naming-Conventions/
+lang: en
 tags:
   - Naming Conventions
   - Git

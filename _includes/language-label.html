@@ -1,0 +1,12 @@
+{% assign document_language = include.document.lang %}
+{% if document_language == "zh" or document_language == "zh-CN" or document_language == "zh-Hans" %}
+  {% assign document_language_label = "Chinese" %}
+{% elsif document_language == "en" or document_language == "en-US" or document_language == "en-GB" %}
+  {% assign document_language_label = "English" %}
+{% else %}
+  {% assign document_language_label = document_language %}
+{% endif %}
+
+{% if document_language_label %}
+  <span class="language-label" lang="{{ document_language }}" aria-label="Language: {{ document_language_label }}">{{ document_language_label }}</span>
+{% endif %}
