@@ -11,7 +11,7 @@ locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Homepage"
 title_separator          : "-"
-name                     : &name "Guohen Sun"
+name                     : &name "Guoheng Sun"
 description              : &description "Guoheng Sun's homepage"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://sgh579.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
@@ -233,6 +233,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
   talks:
     output: true
     permalink: /:collection/:path/
@@ -296,6 +299,15 @@ defaults:
       author_profile: false
       share: true
       comment: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      comments: false
   # _talks
   - scope:
       path: ""

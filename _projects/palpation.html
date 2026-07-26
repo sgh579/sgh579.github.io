@@ -1,0 +1,121 @@
+---
+layout: single
+title: "Is Stiffness Sufficient for Palpation Lesion Localization?"
+permalink: /projects/palpation/
+excerpt: "Comparing scalar stiffness with the full force–displacement process for palpation lesion localization."
+author_profile: false
+share: false
+---
+
+<article class="palpation-project">
+  <header class="palpation-project__intro">
+    <p class="palpation-project__summary">
+      A controlled comparison of scalar equivalent-stiffness maps and complete
+      force–displacement curves for palpation lesion localization.
+    </p>
+    <p class="palpation-project__links">
+      <a class="btn btn--primary" href="/files/palpation/is-stiffness-sufficient.pdf">Paper (PDF)</a>
+      <a
+        class="btn btn--primary"
+        href="https://github.com/sgh579/Stiffness-UNet"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Code</a>
+    </p>
+  </header>
+
+  <section aria-labelledby="replay-title">
+    <div class="palpation-section-heading">
+      <h2 id="replay-title">Process replay</h2>
+    </div>
+
+    <div
+      class="palpation-replay"
+      data-v1-replay
+      data-source="/assets/data/palpation/v1-high-gap-10.json"
+      data-media-root="/images/palpation/v1-replays"
+    >
+      <div class="palpation-replay__stage" tabindex="0" aria-label="Sample replay selector">
+        <button
+          class="palpation-replay__arrow palpation-replay__arrow--previous"
+          type="button"
+          aria-label="Show previous sample"
+          data-replay-previous
+        >←</button>
+        <figure class="palpation-replay__animation">
+          <video
+            width="1140"
+            height="500"
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="/images/palpation/v1-replays/sample_0223.png"
+            aria-label="Point-synchronized replay for sample 0223."
+            data-replay-video
+          >
+            <source
+              src="/images/palpation/v1-replays/sample_0223.mp4"
+              type="video/mp4"
+            >
+            <a href="/images/palpation/v1-replays/sample_0223.mp4">Download the replay video.</a>
+          </video>
+        </figure>
+        <button
+          class="palpation-replay__arrow palpation-replay__arrow--next"
+          type="button"
+          aria-label="Show next sample"
+          data-replay-next
+        >→</button>
+      </div>
+      <p class="palpation-replay__sample" aria-live="polite" data-replay-status>
+        sample 0223 · 1/10
+      </p>
+
+      <figure class="palpation-replay__outputs">
+        <div class="palpation-replay__selected-outputs">
+          <figure>
+            <canvas
+              class="palpation-replay__output-canvas"
+              role="img"
+              aria-label="Baseline output for sample 0223"
+              data-replay-stiffness-output
+            ></canvas>
+            <figcaption>Baseline</figcaption>
+          </figure>
+          <figure>
+            <canvas
+              class="palpation-replay__output-canvas"
+              role="img"
+              aria-label="Proposed model output for sample 0223"
+              data-replay-proposed-output
+            ></canvas>
+            <figcaption>Proposed</figcaption>
+          </figure>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="palpation-evidence" aria-labelledby="evidence-title">
+    <div class="palpation-section-heading">
+      <div>
+        <h2 id="evidence-title">Ten examples</h2>
+      </div>
+      <span class="palpation-evidence__legend">
+        <i aria-hidden="true"></i> Ground truth
+      </span>
+    </div>
+    <div
+      class="palpation-evidence__body"
+      data-v1-gallery
+      data-source="/assets/data/palpation/v1-high-gap-10.json"
+    >
+      <p class="palpation-evidence__loading">Loading examples…</p>
+      <div class="palpation-evidence__grid"></div>
+      <p class="palpation-evidence__error" role="alert" hidden></p>
+    </div>
+  </section>
+</article>
