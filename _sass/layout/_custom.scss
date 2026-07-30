@@ -143,6 +143,13 @@ html[data-theme="dark"] .masthead {
   -webkit-overflow-scrolling: touch;
 }
 
+.page__content .generative-model-comparison {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .post-info-bar {
   margin: 0.75rem 0 1.35rem;
   border: 1px solid var(--global-border-color);
